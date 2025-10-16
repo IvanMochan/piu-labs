@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Uwagi o formularzach HTML – kiedy i jak ich używać</title>
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<header>
+<h1>Uwagi o formularzach HTML</h1>
+<p>Praktyczne spostrzeżenia: kiedy formularze są właściwym narzędziem, jak je projektować i jakich błędów unikać.</p>
+</header>
+
+
+<nav aria-label="Spis treści">
+<ul>
+<li><a href="#dlaczego">Dlaczego i po co formularze</a></li>
+<li><a href="#kiedy-tak">Kiedy stosować</a></li>
+<li><a href="#kiedy-nie">Kiedy nie stosować</a></li>
+</ul>
+</nav>
+
+
+<main>
+<article>
+<section id="dlaczego">
+<h2>Dlaczego i po co formularze</h2>
+<p>Formularze są podstawowym sposobem przekazywania danych od użytkownika do aplikacji. Od wyszukiwarek, przez logowanie, po rozbudowane ankiety – wszędzie tam wykorzystujemy <code>&lt;form&gt;</code> i kontrolki formularza. Ich przewagą jest natywna obsługa klawiatury, wbudowana walidacja, integracja z czytnikami ekranu oraz znajome zachowanie w przeglądarkach.</p>
+</section>
+
+
+<section id="kiedy-tak">
+<h2>Kiedy stosować</h2>
+<ul>
+<li>Gdy potrzebujemy <strong>wysłać dane</strong> do serwera (logowanie, rejestracja, checkout, komentarz).</li>
+<li>Gdy zależy nam na <strong>natywnej walidacji</strong> i obsłudze klawiatury bez dodatkowego JS.</li>
+<li>Gdy oczekujemy <strong>dostępności</strong> i zgodności z narzędziami asystującymi.</li>
+<li>Gdy akcja ma być <strong>bookmarkowalna</strong> (np. wyszukiwarka – wtedy metoda GET).</li>
+</ul>
+</section>
+
+
+<section id="kiedy-nie">
+<h2>Kiedy nie stosować</h2>
+<ul>
+<li>Do <strong>nawigacji</strong> po stronie (menu, paginacja) – tu lepszy jest <code>&lt;a&gt;</code>.</li>
+<li>Gdy zbieramy dane <strong>bez wysyłki</strong> (np. czysto lokalne filtry) – wystarczy zwykły interfejs z przyciskami.</li>
+<li>Jako <strong>zamiennik przycisków</strong> – nie wstawiaj formularza tylko po to, by wywołać JS.</li>
+</ul>
+</section>
+
+
+<aside aria-label="Wskazówka">
+<p><strong>Wskazówka:</strong> projektuj „<em>progressive enhancement</em>”. Formularz powinien być używalny bez JS, a skrypty mogą go jedynie ulepszać (walidacja po stronie klienta, podpowiedzi, autouzupełnianie).</p>
+</html>

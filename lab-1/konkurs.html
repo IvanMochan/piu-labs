@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zgłoszenie do Konkursu Plastycznego</title>
+<link rel="stylesheet" href="css/konkurs.css" />
+</head>
+<body>
+<main class="page">     
+<header class="page__header">
+<h1 class="title">
+<span>Zgłoszenie<br>do Konkursu Plastycznego</span>
+</h1>
+<button id="themeToggle" class="theme-toggle" type="button" title="Zmień motyw" aria-label="Formularz - ciemna skórka">🌗</button>
+</header>
+
+
+<form class="card form" action="https://httpbin.org/get" method="get" novalidate>
+<div class="form_row">
+<label for="imie">Imię:<br></label>
+<input class="input_box" id="imie" name="imie" type="text" inputmode="text" maxlength="30" required />
+</div>
+
+
+<div class="form_row">
+<label for="nazwisko">Nazwisko:<br></label>
+<input class="input_box" id="nazwisko" name="nazwisko" type="text" inputmode="text" maxlength="50" required />
+</div>
+
+
+<div class="form_row">
+<label for="email">Email:<br></label>
+<input class="input_box" id="email" name="email" type="email" required />
+</div>
+
+
+<div class="form_row">
+<label for="miasto">Miasto:<br></label>
+<input class="input_box" id="miasto" name="miasto" list="lista-miast" placeholder="Wybór miasta z listy" required />
+<datalist id="lista-miast">
+<option value="Warszawa"></option>
+<option value="Kraków"></option>
+<option value="Gdańsk"></option>
+<option value="Wrocław"></option>
+<option value="Poznań"></option>
+</datalist>
+</div>
+
+
+<div class="form_row">
+<label for="urodzenie">Data urodzenia:<br></label>
+<input class="input_box" id="urodzenie" name="urodzenie" type="date" required />
+</div>
+
+
+<div class="form_row">
+<label for="liczba">Liczba zgłaszanych prac (od 1 do 6):<br></label>
+<input class="input_box" id="liczba" name="liczba" type="number" min="1" max="6" step="1" required />
+</div>
+
+
+<div class="form_row">
+<label for="kolor">Kolor wiodący prac:<br></label>
+<input class="input_box" id="kolor" name="kolor" type="color" value="#f1d016" required />
+</div>
+
+
+<div class="form_row">
+<label for="kategoria">Kategoria pracy:<br></label>
+<select class="input_box" id="kategoria" name="kategoria" required aria-label="Wybór kategorii">
+<option value="" disabled selected>-- wybierz kategorię --</option>
+<option>Rysunek</option>
+<option>Malarstwo</option>
+<option>Rzeźba</option>
+<option>Fotografia</option>
+<option>Inne</option>
+</select>
+</div>
+
+
+<fieldset class="form_fieldset" id="publikacja">
+<legend>Publikacja pracy online:<br></legend>
+<div class="options">
+<input type="radio" id="pub_tak" name="publikacja" value="tak" required />
+<label for="pub_tak">Tak</label>
+</div>
+<div class="options">
+<input type="radio" id="pub_nie" name="publikacja" value="nie" required />
+<label for="pub_nie">Nie</label>
+</div>
+</fieldset>
+
+
+<div class="form_row form_agree">
+<input type="checkbox" id="zgoda" name="zgoda" required />
+<label for="zgoda">Zgadzam się na regulamin konkursu</label>
+</div>
+
+
+<div class="form_row">
+<button class="btn" type="submit"><b>Wyślij zgłoszenie</b></button>
+</div>
+</form>
+</main>
+
+
+<script>
+(function(){
+const toggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const STORAGE_KEY = 'form-skin';
+function applyTheme(mode){
+if(mode === 'dark'){
+root.setAttribute('data-theme','dark');
+} else {
+root.removeAttribute('data-theme');
+}
+}
+const saved = localStorage.getItem(STORAGE_KEY);
+if(saved){ applyTheme(saved); }
+toggle.addEventListener('click', () => {
+const isDark = root.getAttribute('data-theme') === 'dark';
+const next = isDark ? 'light' : 'dark';
+applyTheme(next);
+localStorage.setItem(STORAGE_KEY, next);
+});
+})();
+</script>
+</body>
+</html>

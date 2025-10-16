@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Logowanie – Ivan Mochan</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Logowanie</h1>
+      <p>Podaj hasło, aby uzyskać dostęp.</p>
+    </header>
+
+    <main>
+      <article>
+        <form action="https://httpbin.org/post" method="post">
+          <label for="haslo">Hasło:</label>
+          <input type="password" id="haslo" name="haslo" required minlength="4" />
+          <button type="submit">Zaloguj</button>
+        </form>
+      </article>
+    </main>
+
+    <footer>
+      <p><a href="index.html">← Powrót na stronę główną</a></p>
+    </footer>
+  </body>
+</html>

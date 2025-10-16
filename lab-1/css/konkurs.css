@@ -1,0 +1,117 @@
+html, body { height: 100%; }
+
+body{
+margin: 0;
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+font-size: 16px; 
+line-height: 1.5;
+}
+
+.form_row{
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.input_box{
+    width: 430px;
+    height: 30px;
+    
+}
+
+.input_box:hover{
+    cursor: pointer;
+}
+
+#urodzenie{
+    width: 433px;
+}
+
+#kolor{
+    height: 35px;
+    width: 436.5px;
+}
+
+#kategoria{
+    width: 300px;
+    height: 35px;
+    padding-left: 5px;
+}
+
+#kategoria{
+    width: 436px;
+}
+
+.form_fieldset{
+    margin-top: 20px;
+    padding-left: 14px;
+    box-sizing: border-box;
+    margin-left: 30px ;
+    width: 437px;
+}
+
+.options{
+    margin-left: -7px;
+    margin-top: 5px;
+}
+
+.form_agree{
+    margin-top: 10px;
+}
+
+.btn{
+    width: 440px;
+    height: 50px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    background-color: #5fb962;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 0px;
+}
+
+.btn:hover{
+  background-color: #4CAF50;
+}
+
+.page{ max-width: 500px; margin: 0 auto; padding: 16px;}
+
+
+.page__header{
+display: flex; align-items: center; justify-content: space-between;
+max-width: 500px; margin: 12px auto 8px auto;
+}
+
+
+.title{ margin: 0; font-weight: 700; }
+.title span{ display:inline-block; font-size: 26px; }
+
+
+.theme-toggle{
+border: none; background: transparent; font-size: 28px; line-height: 1; cursor: pointer;
+}
+.theme-toggle:hover{ transform: scale(1.05); }
+.theme-toggle:active{ transform: scale(0.98); }
+
+
+.card{
+background: var(--card);
+border: 1px solid var(--border);
+border-radius: 6px;
+box-shadow: 0.5px 0.5px 10px grey ;
+}
+:root[data-theme="dark"] .card {
+  background: #191b1f;          
+  color: #f1f1f1;               
+  border-color: #2f343c;
+  box-shadow: 0 1px 3px rgba(0,0,0,.5), 0 6px 12px rgba(0,0,0,.6);
+}
+:root[data-theme="dark"] .card input,
+:root[data-theme="dark"] .card select,
+:root[data-theme="dark"] .card textarea,
+:root[data-theme="dark"] .card .form__fieldset {
+  background: #23262b;
+  color: #f1f1f1;
+}
+
