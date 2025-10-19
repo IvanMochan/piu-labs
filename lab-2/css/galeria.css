@@ -1,0 +1,45 @@
+/* --- Responsive gallery layout --- */
+.gallery {
+  margin-top: 14px;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr; /* default: one column */
+}
+
+/* <800px → 1 column, 500px wide images */
+.gallery img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+/* 800–1199px → 1 column, bigger images (1000px) */
+@media (min-width:800px) and (max-width:1199px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery img {
+    max-width: 1000px;
+  }
+}
+
+/* 1200–1599px → 2 columns, 500px images */
+@media (min-width:1200px) and (max-width:1599px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery img {
+    max-width: 500px;
+  }
+}
+
+/* ≥1600px → 2 columns, 1000px images */
+@media (min-width:1600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery img {
+    max-width: 1000px;
+  }
+}

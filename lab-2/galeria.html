@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galeria</title>
+  <style>
+    :root{
+      --bg:#eef0f1; --paper:#fff; --accent:#1f7ec9; --accent2:#f39c12;
+      --text:#0e1111; --muted:#5a646a;
+      --radius:14px; --gap:14px;
+      --shadow:0 10px 22px rgba(0,0,0,.12), 0 2px 6px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box}
+    body{
+        margin:0;
+        font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+        background:var(--bg);
+        color:var(--text)
+    }
+
+    .wrap{
+        max-width:1200px;
+        margin:auto;
+        padding:clamp(12px,3vw,28px)
+    }
+
+    header{
+        background:var(--accent2);
+        color:#fff;
+        border-radius:var(--radius);
+        padding:12px 16px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between
+    }
+
+    header h1{
+        margin:0;
+        font-weight:800;
+        font-size:clamp(20px,3vw,28px)
+    }
+
+    header .hint{
+        font-size:14px;
+        opacity:.9
+    }
+
+    .gallery{
+        margin-top:14px;
+        display:grid; 
+        gap:var(--gap); 
+        grid-template-columns:1fr; 
+    }
+
+    @media (min-width:1200px){ .gallery{ grid-template-columns:repeat(2,1fr); } } 
+
+    figure{
+        background:var(--paper);
+        border-radius:var(--radius);
+        overflow:hidden;
+        border:2px solid transparent;
+        transition:transform .25s, box-shadow .25s, border-color .25s;
+    }
+
+    figure:hover, figure:focus-within{
+        transform:translateY(-4px);
+        box-shadow:var(--shadow);
+        border-color:color-mix(in oklab, var(--accent) 30%, transparent);
+    }
+
+    figure img{
+        display:block;
+        width:100%; 
+        height:auto; 
+        border:0; 
+    }
+
+    figcaption{ 
+        padding:10px 12px;
+        font-size:14px; 
+        color:var(--muted); 
+        background:#fff; 
+        border-top:1px solid #edf0f2 
+    }
+
+    figcaption strong{
+        display:block; 
+        color:var(--text); 
+        margin-bottom:2px
+    }
+
+  </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Galeria zdjęć</h1>
+        </header>
+
+    <main class="gallery" aria-label="Siatka galerii">
+
+        <figure>
+            <img src="images/1-500.jpg"
+                srcset="images/1-500.jpg 500w, images/1-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 1: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 1</strong>Droga w lesie</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/2-500.jpg"
+                srcset="images/2-500.jpg 500w, images/2-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 2: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 2</strong>Zawroty drodzy w lesie</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/3-500.jpg"
+                srcset="images/3-500.jpg 500w, images/3-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 3: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 3</strong>Most</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/4-500.jpg"
+                srcset="images/4-500.jpg 500w, images/4-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 4: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 4</strong>Wodospad</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/5-500.jpg"
+                srcset="images/5-500.jpg 500w, images/5-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 5: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 5</strong>Las</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/6-500.jpg"
+                srcset="images/6-500.jpg 500w, images/6-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 6: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 6</strong>Droga w lesie jesienią</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/7-500.jpg"
+                srcset="images/7-500.jpg 500w, images/7-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 7: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 7</strong>Małe wodospady</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/8-500.jpg"
+                srcset="images/8-500.jpg 500w, images/8-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 8: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 8</strong>Czerwony las</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/9-500.jpg"
+                srcset="images/9-500.jpg 500w, images/9-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 9: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 9</strong>Jezioro</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/10-500.jpg"
+                srcset="images/10-500.jpg 500w, images/10-1000.jpg 1000w"
+                sizes="(min-width:1600px) 1000px, (min-width:1200px) 500px, (min-width:800px) 1000px, 500px"
+                alt="Zdjęcie 10: opis treści" loading="lazy">
+            <figcaption><strong>Zdjęcie 10</strong>Zachód słońca</figcaption>
+            </figure>
+        </main>
+    </div>
+</body>
+</html>
