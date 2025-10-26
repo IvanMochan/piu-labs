@@ -112,11 +112,13 @@ body {
 	grid-template-columns: 1fr auto;
 	align-items: center;
 }
+
 .header h1 {
 	margin: 0;
 	font-size: 26px;
 	font-weight: 700;
 }
+
 .header .badge {
 	background: var(--brand);
 	color: #fff;
@@ -125,6 +127,7 @@ body {
 	border-radius: 6px;
 	width: fit-content;
 }
+
 .header .lead {
 	grid-column: 1/-1;
 	margin: 0;
@@ -140,6 +143,7 @@ legend {
 	width: fit-content;
 	align-self: center;
 }
+
 legend {
 	margin-bottom: 15px;
 	font-weight: 700;
@@ -169,7 +173,9 @@ legend {
 	cursor: pointer;
 	--color: #000;
 	--active: 0;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
 .swatches label::after {
 	content: '';
 	width: 100%;
@@ -179,6 +185,12 @@ legend {
 	transform-origin: center;
 	transform: scale(calc(1 - (1 - var(--sel-scale)) * var(--active)));
 }
+
+.swatches label:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.15); 
+}
+
 .colors .swatches label[for='color-blue'] {
 	--color: var(--c-blue);
 }
@@ -192,11 +204,14 @@ legend {
 	--color: var(--c-yellow);
 }
 
-.product:has(#color-blue:checked) .colors label[for='color-blue'],
-.product:has(#color-red:checked) .colors label[for='color-red'],
-.product:has(#color-green:checked) .colors label[for='color-green'],
-.product:has(#color-yellow:checked) .colors label[for='color-yellow'] {
+.product:has(#color-blue:checked) .swatches label[for='color-blue'],
+.product:has(#color-red:checked) .swatches label[for='color-red'],
+.product:has(#color-green:checked) .swatches label[for='color-green'],
+.product:has(#color-yellow:checked) .swatches label[for='color-yellow'] {
 	--active: 1;
+	transform: scale(1.3); 
+	box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2); 
+	border-color: var(--brand); 
 }
 
 .size-grid {
@@ -204,6 +219,7 @@ legend {
 	grid-template-columns: repeat(4, 1fr);
 	gap: 10px;
 }
+
 .size {
 	display: grid;
 	place-items: center;
@@ -222,6 +238,7 @@ legend {
 	);
 	font-weight: 700;
 	font-size: 15px;
+	transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .product:has(#s-s:checked) .size[for='s-s'],
@@ -229,6 +246,17 @@ legend {
 .product:has(#s-l:checked) .size[for='s-l'],
 .product:has(#s-xl:checked) .size[for='s-xl'] {
 	--sel: 1;
+	transform: scale(1.2); 
+	background-color: var(--brand); 
+	color: #fff;  
+}
+
+.size:hover {
+	transform: scale(1.1);  
+}
+
+.size:hover {
+	background-color: rgba(var(--brand), 0.8); 
 }
 
 .price {
@@ -236,6 +264,7 @@ legend {
 	font-weight: 700;
 	text-align: center;
 }
+
 .cta {
 	appearance: none;
 	border: 2px solid #000;
