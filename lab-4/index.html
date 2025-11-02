@@ -2,11 +2,58 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 4</title>
+    <title>Lab 4 — Kanban</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <main class="wrap">
+      <header class="topbar">
+        <h1>Kanban</h1>
+        <a class="back" href="..">Powrót</a>
+      </header>
+
+      <section id="board" class="board" aria-label="Tablica Kanban">
+        <!-- Kolumna: Do zrobienia -->
+        <div class="column" data-col="todo">
+          <header class="column__header">
+            <h2>Do zrobienia <span class="count" data-count="todo">0</span></h2>
+            <div class="column__actions">
+              <button class="btn" data-action="add" data-col="todo">Dodaj kartę</button>
+              <button class="btn" data-action="colorize-column" data-col="todo">Koloruj kolumnę</button>
+              <button class="btn" data-action="sort" data-col="todo" title="Sortuj alfabetycznie">Sortuj</button>
+            </div>
+          </header>
+          <div class="cards" data-col="todo" aria-live="polite"></div>
+        </div>
+
+        <!-- Kolumna: W trakcie -->
+        <div class="column" data-col="doing">
+          <header class="column__header">
+            <h2>W trakcie <span class="count" data-count="doing">0</span></h2>
+            <div class="column__actions">
+              <button class="btn" data-action="add" data-col="doing">Dodaj kartę</button>
+              <button class="btn" data-action="colorize-column" data-col="doing">Koloruj kolumnę</button>
+              <button class="btn" data-action="sort" data-col="doing" title="Sortuj alfabetycznie">Sortuj</button>
+            </div>
+          </header>
+          <div class="cards" data-col="doing" aria-live="polite"></div>
+        </div>
+
+        <!-- Kolumna: Zrobione -->
+        <div class="column" data-col="done">
+          <header class="column__header">
+            <h2>Zrobione <span class="count" data-count="done">0</span></h2>
+            <div class="column__actions">
+              <button class="btn" data-action="add" data-col="done">Dodaj kartę</button>
+              <button class="btn" data-action="colorize-column" data-col="done">Koloruj kolumnę</button>
+              <button class="btn" data-action="sort" data-col="done" title="Sortuj alfabetycznie">Sortuj</button>
+            </div>
+          </header>
+          <div class="cards" data-col="done" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/app.js" defer></script>
   </body>
 </html>
