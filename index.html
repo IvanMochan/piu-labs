@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <title>PIU Labs</title>
-    <link rel="stylesheet" href="main.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 6 - Ajax Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1 class="page-title">Lab 6 - Ajax Demo</h1>
 
-  <body>
-    <h1>PIU - ćwiczenia</h1>
-    <ul>
-      <li><a href="lab-1/">Lab 1</a></li>
-      <li><a href="lab-2/">Lab 2</a></li>
-      <li><a href="lab-3/">Lab 3</a></li>
-      <li><a href="lab-4/">Lab 4</a></li>
-    </ul>
-  </body>
+    <div class="layout">
+      <section class="sidebar">
+        <div class="buttons">
+          <button id="btn-load" class="btn primary">Pobierz dane</button>
+          <button id="btn-error" class="btn danger">Pobierz z błędem</button>
+          <button id="btn-reset" class="btn">Resetuj widok</button>
+        </div>
+
+        <div id="loader" class="loader hidden">Ładowanie danych…</div>
+        <div id="errorBox" class="error hidden"></div>
+      </section>
+
+      <section class="content">
+        <h2 class="content-title">Wyniki</h2>
+        <ul id="list" class="list">
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="ajax.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>
