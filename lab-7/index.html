@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lab-7 - Karty produktów</title>
+		<script type="module" src="./product-card.js"></script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #ffffff;
+        color: #1f2937;
+        line-height: 1.6;
+      }
+
+      .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+
+      .header {
+        margin-bottom: 2.5rem;
+        text-align: center;
+      }
+
+      .header-top {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: 800;
+        color: #1d4ed8;
+        letter-spacing: -0.02em;
+      }
+
+      .header p {
+        margin: 0.5rem auto 0;
+        max-width: 720px;
+        color: #4b5563;
+        font-size: 1rem;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 0.25rem 0.6rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        border-radius: 999px;
+        background: #ede9fe;
+        color: #1d4ed8;
+        border: 1px solid #c4b5fd;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        align-items: stretch;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(
+          900px 400px at 50% -200px,
+          rgba(139, 92, 246, 0.08),
+          transparent 60%
+        );
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      :focus-visible {
+        outline: 3px solid #a78bfa;
+        outline-offset: 3px;
+      }
+    </style>
+
+
+	</head>
+
+	<body>
+		<main class="wrapper">
+			<header class="header">
+				<div class="header-top">
+					<span class="badge">LAB-7</span>
+					<h1>Karta produktu</h1>
+				</div>
+				<p>
+            Karta produktów w sklepie internetowym z odzieżą
+				</p>
+			</header>
+
+			<section class="grid" aria-label="Przykładowe produkty">
+				<product-card>
+					<img
+						slot="image"
+						src="./images/blackshirt.png"
+						alt="Czarna koszulka" />
+					<span slot="name">Koszulka Czarna</span>
+					<span slot="price">89,00 zł</span>
+					<span slot="promotion">-15% weekend</span>
+
+					<span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+					<span slot="sizes">XL</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="./images/grayshirt.png"
+						alt="Szara koszulka" />
+					<span slot="name">Koszulka Szara</span>
+					<span slot="price">99,00 zł</span>
+          <span slot="promotion">-15% weekend</span>
+
+					<span slot="sizes">XS</span>
+					<span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="./images/greenshirt.png"
+						alt="Zielona koszulka" />
+					<span slot="name">Koszulka Zielona</span>
+					<span slot="price">109,00 zł</span>
+					<span slot="promotion">Nowość</span>
+
+					<span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="./images/orangeshirt.jpg"
+						alt="Pomarańczowa koszulka" />
+					<span slot="name">Koszulka Pomarańczowa</span>
+					<span slot="price">79,00 zł</span>
+					<span slot="promotion">-30%</span>
+
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+					<span slot="sizes">XL</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="./images/redshirt.png"
+						alt="Czerwona koszulka" />
+					<span slot="name">Koszulka Czerwona</span>
+					<span slot="price">95,00 zł</span>
+          <span slot="promotion">-15% weekend</span>
+
+          <span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="./images/yellowshirt.png"
+						alt="Żółta koszulka" />
+					<span slot="name">Koszulka Żółta</span>
+					<span slot="price">119,00 zł</span>
+					<span slot="promotion">Bestseller</span>
+
+					<span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+				</product-card>
+			</section>
+		</main>
+	</body>
+</html>
